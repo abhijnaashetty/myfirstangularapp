@@ -1,0 +1,47 @@
+<h1>Hello!!! This is {{title}}</h1>
+<h3>my name is {{name}} </h3>
+
+<img src="assets/image2.jpg" alt="imagehere" height="100" width="100">
+<br>
+<!--Property binding of image in ts and html --
+<img [src]="image" alt="" heigth="100" width="100">
+<br>
+
+
+<!--event binding -->
+<button (click)="onClick()">Event binding</button><br><br>
+<br>
+<button (click)="onClick1()">Event bindind-console</button><br><br>
+<br>
+
+
+<!--model directive for two way modeling-->
+<h4>Any thing enteres here will be displayed</h4>
+<input [(ngModel)]="randomNumber" type="text">
+<br>
+<h4>display here:</h4>
+<h4>{{randomNumber}}</h4>
+
+
+
+<!-- *ngfor -->
+<ul>
+    <li *ngFor="let course of courses">
+        {{course.courseid}} - {{course.coursename}}
+    </li>
+</ul>
+
+
+<!--Mg model change the color -->
+<!--ng style -->
+<input [(ngModel)]="mycolor" type="text">
+<div [ngStyle]="{'color':mycolor}">change the color</div>
+
+
+<!-- ngStyle Demo -->
+<ul *ngFor="let person of people">
+    <li [ngStyle]="{'font-size.px':24}" [style.color]="getColor(person.country)">{{ person.name }} ({{ person.country
+        }})
+    </li>
+</ul>
+<router-outlet></router-outlet>
